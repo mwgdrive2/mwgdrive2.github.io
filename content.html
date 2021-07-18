@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/thumbnail.png">
+    <title>Watkins - Book of Mormon</title>
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/content.css" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+
+  <body onload="init()">
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul id="chapter-list" class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                      <span data-feather="chevrons-left"></span>
+                      Back
+                    </a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 id="book" class="h2"></h1>
+          </div>
+          <div class="row">
+              <div class="col-md-12 d-flex align-items-center pb-2 mb-2" style="left:35%;margin-right:-65%;" id="audio"></div>
+          </div>
+          <div id="pdf"></div>
+        </main>
+      </div>
+    </div>
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+  </body>
+</html>

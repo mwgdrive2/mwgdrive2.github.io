@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/thumbnail.png">
+    <title>Watkins - Book of Mormon</title>
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/content.css" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+          <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky" style="padding:10px;">
+                <ul id="profile-list" class="nav flex-column">
+                  <li class="nav-item">
+                      <a style="margin-bottom:15px;" class="nav-link" href="index.html">
+                        <span data-feather="chevrons-left"></span>
+                        Back
+                      </a>
+                    <input id="searchBar" onkeyup="search(this)" type="text" placeholder="Search">
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">A</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('Abinadi')">
+                          <span data-feather="user"></span>
+                          Abinadi
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Abraham
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Adam
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Alma, the Elder
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Alma, Son of Alma
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Ammon, the Mulekite
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Ammon, Son of Mosiah
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Amulek
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Anti-Nephi-Lehi
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="users"></span>
+                          Anti-Nephi-Lehies
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">B</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Benjamin
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Enos
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">C</h4>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">D</h4>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">E</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Ether
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Eve
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">F</h4>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">G</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Gideon
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">H</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Hagoth
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Helaman, Son of Alma
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="users"></span>
+                          Helaman, Sons of
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">I</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Ishmael
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">J</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Jacob, Son of Lehi
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Jared
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Jared, Brother of
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="users"></span>
+                          Jaredites
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="star"></span>
+                          Jesus Christ
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">K</h4>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">L</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Laban
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Laman, Son of Lehi
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Laman, King
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="users"></span>
+                          Lamanites
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Lamoni
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Lehi
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Lehi, Nephite Captain
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Lemuel
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">M</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Mary
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Mormon
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="map-pin"></span>
+                          Mormon
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="map-pin"></span>
+                          Moroni, Captain
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Moroni, Son of Mormon
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Mosiah, Son of Benjamin
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">N</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Nephi, Son of Helaman
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Nephi, Son of Lehi
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Nephi, Son of Nephi
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="users"></span>
+                          Nephites
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">O</h4>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">P</h4>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">R</h4>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">S</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Samuel
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">T</h4>
+                  </li>
+                  <li class="nav-item">
+                      <h4 class="text-muted option">Z</h4>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('Zarahemla')">
+                          <span data-feather="map-pin"></span>
+                          Zarahemla
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Zenock
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link option" onclick="profile('')">
+                          <span data-feather="user"></span>
+                          Zenos
+                      </a>
+                  </li>
+              </ul>
+            </div>
+        </nav>
+        <main role="main" class="col-md-8 ml-sm-auto col-lg-9 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 id="name" class="h2"></h1>
+          </div>
+          <div class="row">
+              <div class="col-md-12 d-flex align-items-center pb-2 mb-2" style="left:35%;margin-right:-65%;" id="audio"></div>
+          </div>
+          <div id="pdf"></div>
+        </main>
+      </div>
+    </div>
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+  </body>
+</html>
