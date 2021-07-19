@@ -27,11 +27,18 @@ function loadChapter(){
   let chapter = param.split('_')[1];
   let audio_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.mp3';
   let thumbnail_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.png';
-  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf#zoom=150';
+  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf#zoom=200';
   //Add audio
   let audio = d3.select('#audio');
+  let back = audio.append('a').attr('class','btn btn-outline-secondary mr-2 pr-2').attr('href','chapter-list.html?book=' + book);
+  back.append('span').attr('data-feather','arrow-left');
   audio.append('img').attr('src',thumbnail_path).attr('width','70').attr('height','70').attr('class','replace mr-2')
   audio.append('audio').attr('controls','').attr('class','replace').attr('src',audio_path).attr('type','audio/mpeg').text('Your browser does not support the audio element.')
+  /*
+  let next = audio.append('a').attr('class','btn btn-outline-secondary ml-2 pl-2');
+  next.append('span').attr('data-feather','arrow-right');
+  */
+  feather.replace()
   //Add PDF
   let pdf = d3.select('#pdf').append('iframe').attr('src',pdf_path).attr('width','100%').attr('height','700px')
 }
