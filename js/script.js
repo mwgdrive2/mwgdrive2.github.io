@@ -27,13 +27,13 @@ function loadChapter(){
   let chapter = param.split('_')[1];
   let audio_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.mp3';
   let thumbnail_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.png';
-  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf';
+  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf#zoom=150';
   //Add audio
   let audio = d3.select('#audio');
   audio.append('img').attr('src',thumbnail_path).attr('width','70').attr('height','70').attr('class','replace mr-2')
   audio.append('audio').attr('controls','').attr('class','replace').attr('src',audio_path).attr('type','audio/mpeg').text('Your browser does not support the audio element.')
   //Add PDF
-  let pdf = d3.select('#pdf').append('embed').attr('class','replace').attr('src',pdf_path).attr('width','100%').attr('height','700px')
+  let pdf = d3.select('#pdf').append('iframe').attr('src',pdf_path).attr('width','100%').attr('height','700px')
 }
 
 function getUrlParameter(sParam) {
