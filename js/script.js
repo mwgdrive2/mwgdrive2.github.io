@@ -27,7 +27,7 @@ function loadChapter(){
   let chapter = param.split('_')[1];
   let audio_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.mp3';
   let thumbnail_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.png';
-  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf#zoom=200';
+  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf#zoom=140';
   //Add audio
   let audio = d3.select('#audio');
   let back = audio.append('a').attr('class','btn btn-outline-secondary mr-2 pr-2').attr('href','chapter-list.html?book=' + book);
