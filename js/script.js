@@ -8,6 +8,15 @@ options_mapping = {'1nephi':22,'2nephi':33,'jacob':7,'enos':1,
 'helaman':16,'3nephi':30,'4nephi':1,'mormon':9,'ether':15,
 'moroni':10}
 
+function buildChapterList(){
+  let selection = getUrlParameter("book")
+  for (let i = 1; i <= options_mapping[selection]; i++){
+      let li = d3.select('#chapters').append('li').attr('class','nav-item');
+      li.style('text-align','center')
+      let a = li.append('a').attr('class','border-bottom nav-link option ' + 'chap' + i.toString()).attr('onclick','select(\'' + selection + '_' + i.toString() + '\')').text('Chapter ' + i.toString());
+  }
+}
+
 function init(){
     let selection = getUrlParameter("selection")
     let title = title_mapping[selection];
