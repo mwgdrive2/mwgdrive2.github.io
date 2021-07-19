@@ -17,34 +17,23 @@ function buildChapterList(){
   }
 }
 
-function init(){
-    let selection = getUrlParameter("selection")
-    let title = title_mapping[selection];
-    d3.select('#book').text(title);
-    for (let i = 1; i <= options_mapping[selection]; i++){
-        let li = d3.select('#chapter-list').append('li').attr('class','nav-item');
-        let a = li.append('a').attr('class','nav-link option ' + 'chap' + i.toString()).attr('onclick','select(\'' + selection + '_' + i.toString() + '\')').text('Chapter ' + i.toString());
-    }
-    select(selection + '_1')
+function select(param){
+  location.href = 'chapter.html?select=' + param;
 }
 
-function select(param){
-    d3.select('#selection-title').text('Chapter ' + param.split('|')[1])
-    let book = param.split('_')[0];
-    let chapter = param.split('_')[1]
-    d3.selectAll('.option').classed('selected',false);
-    d3.select('.chap' + chapter).classed('selected',true);
-    let audio_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.mp3';
-    let thumbnail_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.png';
-    let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf';
-    //Remove any previous content
-    d3.selectAll('.replace').remove();
-    //Add audio
-    let audio = d3.select('#audio');
-    audio.append('img').attr('src',thumbnail_path).attr('width','70').attr('height','70').attr('class','replace')
-    audio.append('audio').attr('controls','').attr('class','replace').attr('src',audio_path).attr('type','audio/mpeg').text('Your browser does not support the audio element.')
-    //Add PDF
-    let pdf = d3.select('#pdf').append('embed').attr('class','replace').attr('src',pdf_path).attr('width','100%').attr('height','700px')
+function loadChapter(){
+  let param = getUrlParameter("select")
+  let book = param.split('_')[0];
+  let chapter = param.split('_')[1];
+  let audio_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.mp3';
+  let thumbnail_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.png';
+  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf';
+  //Add audio
+  let audio = d3.select('#audio');
+  audio.append('img').attr('src',thumbnail_path).attr('width','70').attr('height','70').attr('class','replace mr-2')
+  audio.append('audio').attr('controls','').attr('class','replace').attr('src',audio_path).attr('type','audio/mpeg').text('Your browser does not support the audio element.')
+  //Add PDF
+  let pdf = d3.select('#pdf').append('embed').attr('class','replace').attr('src',pdf_path).attr('width','100%').attr('height','700px')
 }
 
 function getUrlParameter(sParam) {
