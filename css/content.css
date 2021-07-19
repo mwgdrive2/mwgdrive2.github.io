@@ -94,6 +94,7 @@ body {
 
 a:hover{
     background-color: #D9E7F4;
+    opacity: 0.5;
 }
 ul:hover{
     cursor: pointer;
