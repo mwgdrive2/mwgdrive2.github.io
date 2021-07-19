@@ -27,7 +27,7 @@ function loadChapter(){
   let chapter = param.split('_')[1];
   let audio_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.mp3';
   let thumbnail_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.png';
-  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf#zoom=140';
+  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf#zoom=130';
   //Add audio
   let audio = d3.select('#audio');
   let back = audio.append('a').attr('class','btn btn-lg btn-primary').attr('href','chapter-list.html?book=' + book);
@@ -40,7 +40,7 @@ function loadChapter(){
   */
   feather.replace()
   //Add PDF
-  let pdf = d3.select('#pdf').append('iframe').attr('src',pdf_path).attr('width','100%').attr('height','700px')
+  let pdf = d3.select('#pdf').append('iframe').attr('src',pdf_path).attr('width','90%').attr('height','700px')
 }
 
 function getUrlParameter(sParam) {
