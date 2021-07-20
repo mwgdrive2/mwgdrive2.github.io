@@ -40,7 +40,7 @@ function loadChapter(){
   */
   feather.replace()
   //Add PDF
-  let pdf = d3.select('#pdf').append('iframe').attr('src',pdf_path).attr('width','90%').attr('height','700px')
+  let pdf = d3.select('#pdf').append('iframe').attr('src',pdf_path).attr('width','95%').attr('height','500px')
 }
 
 function getUrlParameter(sParam) {
