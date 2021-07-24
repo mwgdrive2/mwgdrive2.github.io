@@ -27,7 +27,7 @@ function loadChapter(){
   let chapter = param.split('_')[1];
   let audio_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.mp3';
   let thumbnail_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.png';
-  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf#zoom=130';
+  let pdf_path = 'chapter-content/' + book + '/' + chapter + '/' + param + '.pdf#zoom=130#page=2';
   //Add audio
   let audio = d3.select('#audio');
   let back = audio.append('a').attr('class','btn btn-lg btn-primary').attr('href','chapter-list.html?book=' + book);
