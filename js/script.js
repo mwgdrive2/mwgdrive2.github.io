@@ -36,9 +36,9 @@ async function loadChapter(){
   audio.append('audio').attr('controls','').attr('class','replace').attr('src',audio_path).attr('type','audio/mpeg').text('Your browser does not support the audio element.')
   //Add PDF
   let pdf = d3.select('#pdf');
-  let a = pdf.append('a').attr('id','prev').attr('class','btn btn-sm btn-secondary text-light ml-2 mb-2').attr('onmousedown','previousPage(\'' + pdf_path + '\')');
+  let a = pdf.append('a').attr('id','prev').attr('class','btn btn-sm btn-secondary text-light ml-2 mb-2').attr('onmouseup','return false;').attr('onmousedown','previousPage(\'' + pdf_path + '\')');
   a.append('span').attr('data-feather','chevron-left')
-  a = pdf.append('a').attr('id','next').attr('class','btn btn-sm btn-secondary text-light ml-2 mb-2').attr('onmousedown','nextPage(\'' + pdf_path + '\')');
+  a = pdf.append('a').attr('id','next').attr('class','btn btn-sm btn-secondary text-light ml-2 mb-2').attr('onmouseup','return false;').attr('onmousedown','nextPage(\'' + pdf_path + '\')');
   a.append('span').attr('data-feather','chevron-right')
   pdf.append('br')
   pdf.append('iframe').attr('id','pdf-frame').attr('src',pdf_path).attr('width','95%').attr('height','500px')
@@ -54,8 +54,8 @@ function nextPage(pdf_path){
   }
   next_path = pdf_path.substring(0, pdf_path.length - 1) + next_page.toString()
   let frame = d3.select('#pdf-frame').attr('src', next_path)
-  d3.select('#prev').attr('onmousedown','previousPage(\'' + next_path + '\')');
-  d3.select('#next').attr('onmousedown','nextPage(\'' + next_path + '\')');
+  d3.select('#prev').attr('onmouseup','return false;').attr('onmousedown','previousPage(\'' + next_path + '\')');
+  d3.select('#next').attr('onmouseup','return false;').attr('onmousedown','nextPage(\'' + next_path + '\')');
   document.getElementById('pdf-frame').contentDocument.location.reload(true);
   return false;
 }
@@ -69,8 +69,8 @@ function previousPage(pdf_path){
   }
   prev_path = pdf_path.substring(0, pdf_path.length - 1) + prev_page.toString()
   let frame = d3.select('#pdf-frame').attr('src', prev_path)
-  d3.select('#prev').attr('onmousedown','previousPage(\'' + prev_path + '\')');
-  d3.select('#next').attr('onmousedown','nextPage(\'' + prev_path + '\')');
+  d3.select('#prev').attr('onmouseup','return false;').attr('onmousedown','previousPage(\'' + prev_path + '\')');
+  d3.select('#next').attr('onmouseup','return false;').attr('onmousedown','nextPage(\'' + prev_path + '\')');
   document.getElementById('pdf-frame').contentDocument.location.reload(true);
 
   return false;
