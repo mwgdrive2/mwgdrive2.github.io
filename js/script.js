@@ -72,7 +72,6 @@ function previousPage(pdf_path){
   d3.select('#prev').attr('onclick','previousPage(\'' + prev_path + '\')');
   d3.select('#next').attr('onclick','nextPage(\'' + prev_path + '\')');
   document.getElementById('pdf-frame').contentDocument.location.reload(true);
-
   return false;
 }
 
